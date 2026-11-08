@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-black text-white font-sans antialiased; }
+  h1, h2, h3 { @apply font-display italic font-extrabold tracking-tight; }
+  :focus-visible { outline: 2px solid #D9A91E; outline-offset: 2px; }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed; clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
+  .btn-gold { @apply bg-gold text-black hover:bg-gold-light; }
+  .btn-line { @apply border border-white/30 text-white hover:border-gold hover:text-gold; clip-path: none; }
+  .input { @apply w-full bg-ink border border-white/15 px-3 py-2.5 text-white placeholder:text-white/40 focus:border-gold outline-none; }
+  .label { @apply block text-sm text-white/70 mb-1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in { animation: heroIn .8s ease-out both; }
+  @keyframes heroIn { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+}
